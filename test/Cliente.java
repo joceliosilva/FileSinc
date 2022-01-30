@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package app.cliente;
+
 
 import app.bean.FileMesage;
 import com.sun.corba.se.impl.io.OutputStreamHook;
@@ -64,7 +64,7 @@ public class Cliente {
         }
     }
 
-    private void send(String nome) throws IOException {
+    public void send(String nome) throws IOException {
        FileMesage filem = new FileMesage();
        
         JFileChooser fileChooser = new JFileChooser();

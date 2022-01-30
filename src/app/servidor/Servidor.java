@@ -28,7 +28,7 @@ public class Servidor {
     public Servidor() {
         try {
             serverSocket = new ServerSocket(5555);
-            System.out.println("Server on");
+            System.out.println("Server online - Aguardando arquivos...");
             
             while(true){
                 socket = serverSocket.accept();
