@@ -5,16 +5,17 @@
  */
 package app.cliente;
 
-/**
- *
- * @author Jocelio
- */
-public class FileSinc extends javax.swing.JFrame {
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-    /**
-     * Creates new form NewJFrame
-     */
+ 
+public class FileSinc extends javax.swing.JFrame {
+   public String dir;
+    
     public FileSinc() {
+        
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -103,7 +104,14 @@ public class FileSinc extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         ClienteGui c = new ClienteGui();
-        c.nome = jT.getText().toString();
+        dir = jT.getText().toString();
+        c.nome = jT.getText().toString();   //manda o nome para a tela de sincronizaçao
+        c.user.setText(dir);
+        
+        File file = new File("C:\\FILESINC\\"+dir); 
+         if (!file.exists()) {                   //cria o diretorio com o nome do usuario caso nao exista
+         file.mkdirs();
+}
         c.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed

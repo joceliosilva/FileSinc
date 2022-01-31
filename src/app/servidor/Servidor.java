@@ -59,11 +59,11 @@ public class Servidor {
                      streamMap.put(mesage.getCliente(), outputStream);
                      
                      if(mesage.getFile()!= null){
-                         for(Map.Entry<String, ObjectOutputStream> kv : streamMap.entrySet()){
-                             if(!mesage.getCliente().equals(kv.getKey())){
-                                 kv.getValue().writeObject(mesage);
-                             }
-                         }
+                       for(Map.Entry<String, ObjectOutputStream> kv : streamMap.entrySet()){
+                           if(!mesage.getCliente().equals(kv.getKey())){
+                                kv.getValue().writeObject(mesage);
+                            }                    
+                        }
                      }
                   } 
               
